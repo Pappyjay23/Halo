@@ -7,6 +7,7 @@ import {
 	Environment,
 	ContactShadows,
 	Float,
+	Preload,
 } from "@react-three/drei";
 import { useRef } from "react";
 import type * as THREE from "three";
@@ -104,10 +105,13 @@ const HeadphoneModel3d = () => {
 					maxPolarAngle={Math.PI / 1.5}
 				/>
 
+				<Preload all />
 				<HeadphoneModel />
 			</Canvas>
 		</div>
 	);
 };
+
+useGLTF.preload("/models/halo-model.glb");
 
 export default HeadphoneModel3d;

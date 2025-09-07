@@ -9,13 +9,21 @@ const Home = () => {
 
 	return (
 		<main className='relative h-screen text-white bg-background'>
-			{loading ? (
+			{loading && <Loader setLoading={setLoading} />}
+			<div
+				className={`transition-all duration-1000 ease-in-out ${
+					loading ? "opacity-0" : "opacity-100"
+				}`}>
+				<Hero loading={loading} />
+			</div>
+
+			{/* {loading ? (
 				<Loader setLoading={setLoading} />
 			) : (
 				<div>
 					<Hero loading={loading} />
 				</div>
-			)}
+			)} */}
 		</main>
 	);
 };
