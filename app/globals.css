@@ -1,26 +1,62 @@
 @import "tailwindcss";
 
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+	/* Base Colors */
+	--color-hero-bg: #0a0a0a; /* Black / Near-Black */
+	--color-section-bg: #1c1c1c; /* Charcoal Gray */
+	--color-label: #8c8c8c; /* Soft Gray */
+
+	/* Typography */
+	--color-text-primary: #ffffff; /* Pure White */
+	--color-text-secondary: #e6e6e6; /* Off-White */
+
+	/* Accents */
+	--color-accent: #00bfff; /* Neon Blue */
+	--color-accent-glow: #00ffc6; /* Cyan-Teal Glow */
+	--color-accent-gradient: linear-gradient(90deg, #00bfff, #7a5cff);
+
+	--background: #0a0a0a;
+	--foreground: #fff;
+	--font-plus-jakarta-sans: "Plus Jakarta Sans", Arial, Helvetica, sans-serif;
+	--font-manrope: "Manrope", Arial, Helvetica, sans-serif;
+	--font-dm-sans: "DM Sans", Arial, Helvetica, sans-serif;
+	--font-geist-mono: "Geist Mono", monospace;
 }
 
 @theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
+	/* Add colors here if you want to use them as variables */
+	--color-background: var(--background);
+	--color-foreground: var(--foreground);
+	--font-mono: var(--font-geist-mono);
 }
 
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html,
+body {
+	background: #0a0a0a !important;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+	background: var(--background);
+	color: var(--foreground);
+	font-family: var(--font-plus-jakarta-sans);
+}
+
+.threed-canvas canvas {
+	background: transparent !important;
+}
+
+.threed-canvas {
+	background: transparent !important;
+	background-color: transparent !important;
+}
+
+canvas {
+	background: transparent !important;
+	background-color: transparent !important;
+}
+
+@media screen and (min-width: 500px) {
+	.threed-canvas canvas {
+		width: 600px !important;
+	}
 }
