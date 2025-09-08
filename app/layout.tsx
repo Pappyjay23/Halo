@@ -7,25 +7,27 @@ import {
 } from "next/font/google";
 
 import "./globals.css";
+import { Toaster } from "sonner";
+import ReactLenis from "lenis/react";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
-  variable: "--font-plus-jakarta-sans",
-  subsets: ["latin"],
+	variable: "--font-plus-jakarta-sans",
+	subsets: ["latin"],
 });
 
 const manrope = Manrope({
-  variable: "--font-manrope",
-  subsets: ["latin"],
+	variable: "--font-manrope",
+	subsets: ["latin"],
 });
 
 const dmSans = DM_Sans({
-  variable: "--font-dm-sans",
-  subsets: ["latin"],
+	variable: "--font-dm-sans",
+	subsets: ["latin"],
 });
 
 const geistMono = Geist_Mono({
-  variable: "--font-geist-mono",
-  subsets: ["latin"],
+	variable: "--font-geist-mono",
+	subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
@@ -56,7 +58,7 @@ export const metadata: Metadata = {
 		title: "Halo — Premium Headphones",
 		description:
 			"Premium sound. Iconic design. Meet Halo headphones—the ultimate way to experience music.",
-		images: ["/og-image.png"], 
+		images: ["/og-image.png"],
 	},
 
 	icons: {
@@ -70,11 +72,23 @@ export default function RootLayout({
 	children: React.ReactNode;
 }>) {
 	return (
-		<html lang="en">
-			<body
-				className={`${geistMono.variable} ${dmSans.variable} ${manrope.variable} ${plusJakartaSans.variable} antialiased`}>
-				{children}
-			</body>
+		<html lang='en'>
+			<ReactLenis root>
+				<body
+					className={`${geistMono.variable} ${dmSans.variable} ${manrope.variable} ${plusJakartaSans.variable} antialiased`}>
+					{children}
+					<Toaster
+						position='top-center'
+						toastOptions={{
+							style: {
+								background: "transparent",
+								border: "none",
+								boxShadow: "none",
+							},
+						}}
+					/>
+				</body>
+			</ReactLenis>
 		</html>
 	);
 }

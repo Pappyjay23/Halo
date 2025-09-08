@@ -31,7 +31,7 @@ const HeadphoneModel = () => {
 			<primitive
 				ref={modelRef}
 				object={scene}
-				scale={1.7}
+				scale={3}
 				position={[0, -1, 0]}
 			/>
 		</Float>
@@ -40,7 +40,7 @@ const HeadphoneModel = () => {
 
 const HeadphoneModel3d = () => {
 	return (
-		<div className='w-full h-screen relative !bg-transparent'>
+		<div className='w-full h-[50vh] my-auto relative !bg-transparent'>
 			<Canvas
 				className='w-full h-full cursor-pointer threed-canvas !bg-transparent'
 				camera={{
@@ -86,14 +86,14 @@ const HeadphoneModel3d = () => {
 
 				<Environment preset='studio' />
 
-				<ContactShadows
+				{/* <ContactShadows
 					position={[0, -2, 0]}
 					opacity={0.3}
 					scale={10}
 					blur={2}
 					far={4}
 					color='#0A0A0A'
-				/>
+				/> */}
 
 				<OrbitControls
 					enableZoom={false}
@@ -106,6 +106,7 @@ const HeadphoneModel3d = () => {
 				/>
 
 				<Preload all />
+
 				<HeadphoneModel />
 			</Canvas>
 		</div>

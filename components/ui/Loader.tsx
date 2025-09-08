@@ -98,7 +98,7 @@ const Loader = ({
 	);
 
 	return (
-		<div className='loader-container absolute inset-0 flex flex-col items-center justify-center backdrop-blur-sm'>
+		<div className='loader-container absolute inset-0 flex flex-col items-center justify-center backdrop-blur-sm overflow-hidden h-svh'>
 			{/* Counter */}
 			<div
 				ref={counterRef}

@@ -2,7 +2,7 @@
 
 :root {
 	/* Base Colors */
-	--color-hero-bg: #0a0a0a; /* Black / Near-Black */
+	--color-hero-bg: #02000F; /* Near-Black */
 	--color-section-bg: #1c1c1c; /* Charcoal Gray */
 	--color-label: #8c8c8c; /* Soft Gray */
 
@@ -13,9 +13,10 @@
 	/* Accents */
 	--color-accent: #00bfff; /* Neon Blue */
 	--color-accent-glow: #00ffc6; /* Cyan-Teal Glow */
+	--color-accent-purple: #7a5cff; /* Purple */
 	--color-accent-gradient: linear-gradient(90deg, #00bfff, #7a5cff);
 
-	--background: #0a0a0a;
+	--background: #02000F;
 	--foreground: #fff;
 	--font-plus-jakarta-sans: "Plus Jakarta Sans", Arial, Helvetica, sans-serif;
 	--font-manrope: "Manrope", Arial, Helvetica, sans-serif;
@@ -27,13 +28,20 @@
 	/* Add colors here if you want to use them as variables */
 	--color-background: var(--background);
 	--color-foreground: var(--foreground);
+	--color-accent: var(--color-accent);
+	--color-accent-glow: var(--color-accent-glow);
+	--color-accent-purple: var(--color-accent-purple);
+	--color-accent-gradient: var(--color-accent-gradient);
 	--font-mono: var(--font-geist-mono);
+	--font-plus-jakarta-sans: var(--font-plus-jakarta-sans);
+	--font-manrope: var(--font-manrope);
+	--font-dm-sans: var(--font-dm-sans);
 }
 
 body {
 	background: var(--background);
 	color: var(--foreground);
-	font-family: var(--font-plus-jakarta-sans);
+	font-family: var(--font-manrope);
 }
 
 .threed-canvas canvas {
@@ -54,4 +62,83 @@ canvas {
 	.threed-canvas canvas {
 		width: 600px !important;
 	}
+}
+@media screen and (max-width: 500px) {
+	.threed-canvas canvas {
+		width: 300px !important;
+	}
+}
+
+.responsive-container {
+	@apply max-w-[1200px] mx-auto px-4;
+}
+
+@keyframes bar0 {
+	0%,
+	100% {
+		height: 6px;
+	}
+	50% {
+		height: 12px;
+	}
+}
+
+@keyframes bar1 {
+	0%,
+	100% {
+		height: 10px;
+	}
+	50% {
+		height: 6px;
+	}
+}
+
+@keyframes bar2 {
+	0%,
+	100% {
+		height: 18px;
+	}
+	50% {
+		height: 14px;
+	}
+}
+
+@keyframes bar3 {
+	0%,
+	100% {
+		height: 6px;
+	}
+	50% {
+		height: 12px;
+	}
+}
+
+/* Tailwind arbitrary animations */
+.animate-bar0 {
+	animation: bar0 1s ease-in-out infinite;
+}
+.animate-bar1 {
+	animation: bar1 1s ease-in-out infinite;
+}
+.animate-bar2 {
+	animation: bar2 1s ease-in-out infinite;
+}
+.animate-bar3 {
+	animation: bar3 1s ease-in-out infinite;
+}
+
+@keyframes shine {
+	0% {
+		transform: translateX(-100%);
+	}
+	50% {
+		transform: translateX(100%);
+	}
+	100% {
+		transform: translateX(100%);
+	}
+}
+
+.animate-shine {
+	animation: shine 3s linear infinite;
 }
