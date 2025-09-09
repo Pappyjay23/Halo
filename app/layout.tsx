@@ -1,14 +1,13 @@
 import type { Metadata } from "next";
 import {
-	Plus_Jakarta_Sans,
-	Manrope,
 	DM_Sans,
 	Geist_Mono,
+	Manrope,
+	Plus_Jakarta_Sans,
 } from "next/font/google";
 
-import "./globals.css";
 import { Toaster } from "sonner";
-import ReactLenis from "lenis/react";
+import "./globals.css";
 
 const plusJakartaSans = Plus_Jakarta_Sans({
 	variable: "--font-plus-jakarta-sans",
@@ -73,22 +72,20 @@ export default function RootLayout({
 }>) {
 	return (
 		<html lang='en'>
-			<ReactLenis root>
-				<body
-					className={`${geistMono.variable} ${dmSans.variable} ${manrope.variable} ${plusJakartaSans.variable} antialiased`}>
-					{children}
-					<Toaster
-						position='top-center'
-						toastOptions={{
-							style: {
-								background: "transparent",
-								border: "none",
-								boxShadow: "none",
-							},
-						}}
-					/>
-				</body>
-			</ReactLenis>
+			<body
+				className={`${geistMono.variable} ${dmSans.variable} ${manrope.variable} ${plusJakartaSans.variable} antialiased`}>
+				{children}
+				<Toaster
+					position='top-center'
+					toastOptions={{
+						style: {
+							background: "transparent",
+							border: "none",
+							boxShadow: "none",
+						},
+					}}
+				/>
+			</body>
 		</html>
 	);
 }

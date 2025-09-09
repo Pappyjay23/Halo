@@ -2,7 +2,7 @@
 
 :root {
 	/* Base Colors */
-	--color-hero-bg: #02000F; /* Near-Black */
+	--color-hero-bg: #02000f; /* Near-Black */
 	--color-section-bg: #1c1c1c; /* Charcoal Gray */
 	--color-label: #8c8c8c; /* Soft Gray */
 
@@ -16,7 +16,7 @@
 	--color-accent-purple: #7a5cff; /* Purple */
 	--color-accent-gradient: linear-gradient(90deg, #00bfff, #7a5cff);
 
-	--background: #02000F;
+	--background: #02000f;
 	--foreground: #fff;
 	--font-plus-jakarta-sans: "Plus Jakarta Sans", Arial, Helvetica, sans-serif;
 	--font-manrope: "Manrope", Arial, Helvetica, sans-serif;
@@ -42,6 +42,21 @@ body {
 	background: var(--background);
 	color: var(--foreground);
 	font-family: var(--font-manrope);
+	scroll-behavior: smooth;
+}
+
+html,
+body {
+	height: 100%;
+}
+
+#smooth-wrapper {
+	height: 100%;
+	overflow: hidden;
+}
+
+#smooth-content {
+	will-change: transform;
 }
 
 .threed-canvas canvas {
