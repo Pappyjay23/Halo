@@ -50,6 +50,36 @@ body {
 	height: 100%;
 }
 
+/* For modern browsers */
+body::-webkit-scrollbar {
+	width: 10px; /* scrollbar width */
+	height: 10px; /* for horizontal scroll */
+}
+
+body::-webkit-scrollbar-track {
+	background: transparent; /* or a subtle dark shade */
+}
+
+body::-webkit-scrollbar-thumb {
+	background: linear-gradient(
+		180deg,
+		#0ff 0%,
+		#09f 100%
+	); /* Halo neon gradient */
+	border-radius: 9999px; /* rounded edges */
+	border: 2px solid #0a0a0a; /* background color so thumb looks floating */
+}
+
+body::-webkit-scrollbar-thumb:hover {
+	background: linear-gradient(180deg, #0ff, #3ff);
+}
+
+/* For Firefox */
+* {
+	scrollbar-width: thin;
+	scrollbar-color: #09f transparent; /* thumb, track */
+}
+
 #smooth-wrapper {
 	height: 100%;
 	overflow: hidden;
@@ -156,4 +186,8 @@ canvas {
 
 .animate-shine {
 	animation: shine 3s linear infinite;
+}
+
+span.swiper-pagination-bullet {
+	background-color: var(--color-accent) !important;
 }

@@ -190,7 +190,7 @@ const Specs = () => {
 		<Element name='specs' id='specs'>
 			<section className='min-h-[60vh] bg-[linear-gradient(to_bottom,#09002D_0%,#06001E_50%,#02000F_100%)] w-full py-10 lg:py-20 relative'>
                 <div className="absolute top-0 left-0 w-full h-full bg-[#06001E]/50 lg:bg-transparent z-[2]" />
-				<div className='w-[600px] h-[600px] [@media(min-width:2000px)]:w-[900px] [@media(min-width:2000px)]:h-[900px] absolute left-[-30px] spec-img z-[1]'>
+				<div className='w-[300px] h-[300px] md:w-[600px] md:h-[600px] [@media(min-width:2000px)]:w-[800px] [@media(min-width:2000px)]:h-[800px] absolute left-[-30px] spec-img z-[1]'>
 					<Image
 						src='/spec-img.png'
 						fill

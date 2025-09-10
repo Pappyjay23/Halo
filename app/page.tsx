@@ -1,6 +1,7 @@
 "use client";
 
 import Hero from "@/components/sections/Hero/Hero";
+import Highlights from "@/components/sections/Highlights/Highlights";
 import Specs from "@/components/sections/Specs/Specs";
 import Loader from "@/components/ui/Loader";
 import Navbar from "@/components/ui/Navbar";
@@ -41,6 +42,7 @@ const Home = () => {
 							<div className='relative'>
 								<Hero loading={loading} isPlaying={isPlaying} />
 								<Specs />
+								<Highlights />
 							</div>
 						)}
 					</main>
