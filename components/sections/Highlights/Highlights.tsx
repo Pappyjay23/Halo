@@ -49,7 +49,7 @@ const slides = [
 	},
 ];
 
-export default function Highlights() {
+const Highlights = () => {
 	const swiperRef = useRef<SwiperClass | null>(null);
 	const textRefs = useRef<HTMLDivElement[]>([]);
 
@@ -151,4 +151,6 @@ export default function Highlights() {
 			</div>
 		</Element>
 	);
-}
+};
+
+export default Highlights;

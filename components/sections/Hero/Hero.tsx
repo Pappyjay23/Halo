@@ -103,8 +103,8 @@ const Hero = ({
 		gsap.timeline({
 			scrollTrigger: {
 				trigger: "#hero",
-				start: "top bottom",
-				end: "bottom top",
+				start: "top 70%",
+				end: "bottom 10%",
 				onEnter: () => {
 					tl.restart();
 				},

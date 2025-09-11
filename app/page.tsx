@@ -2,6 +2,7 @@
 
 import Hero from "@/components/sections/Hero/Hero";
 import Highlights from "@/components/sections/Highlights/Highlights";
+import Products from "@/components/sections/Products/Products";
 import Specs from "@/components/sections/Specs/Specs";
 import Loader from "@/components/ui/Loader";
 import Navbar from "@/components/ui/Navbar";
@@ -43,6 +44,7 @@ const Home = () => {
 								<Hero loading={loading} isPlaying={isPlaying} />
 								<Specs />
 								<Highlights />
+								<Products />
 							</div>
 						)}
 					</main>
