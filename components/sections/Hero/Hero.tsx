@@ -195,7 +195,7 @@ const Hero = ({
 					{/* CTA */}
 					<div className='hero-cta flex justify-center cursor-pointer absolute bottom-15 md:bottom-10 md:left-3 md:translate-0 z-10'>
 						<Link
-							to='/products'
+							to='products'
 							onClick={() => {
 								playClick();
 							}}

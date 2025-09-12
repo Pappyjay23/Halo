@@ -1,5 +1,6 @@
 "use client";
 
+import CTA from "@/components/sections/CTA/CTA";
 import Hero from "@/components/sections/Hero/Hero";
 import Highlights from "@/components/sections/Highlights/Highlights";
 import Products from "@/components/sections/Products/Products";
@@ -47,6 +48,7 @@ const Home = () => {
 								<Highlights />
 								<Products />
 								<Testimonials />
+								<CTA />
 							</div>
 						)}
 					</main>

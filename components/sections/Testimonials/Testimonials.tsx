@@ -11,6 +11,7 @@ import { IoArrowBack, IoArrowForward } from "react-icons/io5";
 // Import Swiper styles
 import "swiper/css";
 import { useGSAP } from "@gsap/react";
+import { useIsMobile } from "@/lib/utils";
 
 const testimonials = [
 	{
@@ -74,6 +75,8 @@ const testimonials = [
 const Testimonials = () => {
 	const swiperRef = useRef<SwiperClass | null>(null);
 	const textRefs = useRef<HTMLDivElement[]>([]);
+
+	const isMobile = useIsMobile();
 
 	useEffect(() => {
 		if (!swiperRef.current) return;
@@ -141,13 +144,13 @@ const Testimonials = () => {
 
 	return (
 		<Element name='testimonials' id='testimonials'>
-			<div className='bg-background my-24 text-white'>
+			<div className='bg-background mt-24 text-white'>
 				<div className='text-center mb-8 responsive-container'>
 					<h2 className='testimonial-title text-4xl lg:text-5xl font-bold text-left font-plus-jakarta-sans tracking-tight md:px-8'>
 						Real Experiences.
 					</h2>
 				</div>
-				<div className='relative w-full h-[70vh] lg:h-screen flex items-center justify-center responsive-container testimonial-card-row'>
+				<div className='relative w-full h-[70vh] lg:h-screen flex items-center justify-center responsive-container !px-0 testimonial-card-row'>
 					<Swiper
 						modules={[Autoplay, FreeMode]}
 						freeMode={true}
@@ -170,8 +173,7 @@ const Testimonials = () => {
 									<div
 										className='flex flex-col justify-center lg:items-end [@media(min-width:2000px)]:items-end px-4 md:px-8 lg:px-16 relative'
 										style={{
-											backgroundImage:
-												window.innerWidth < 768 ? `url(${t.image})` : "none",
+											backgroundImage: isMobile ? `url(${t.image})` : "none",
 											backgroundSize: "cover",
 											backgroundPosition: "center",
 										}}>
