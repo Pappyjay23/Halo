@@ -151,7 +151,7 @@ const Products: React.FC = () => {
 				ease: "sine.inOut",
 			});
 		});
-	}, [activePalette]);
+	}, []);
 
 	useGSAP(() => {
 		const tl = gsap.timeline({ paused: true });
@@ -161,7 +161,7 @@ const Products: React.FC = () => {
 			{ opacity: 1, y: 0, duration: 1, ease: "power2.in" }
 		)
 			.fromTo(
-				".card-row",
+				".product-card-row",
 				{ opacity: 0 },
 				{ opacity: 1, duration: 1, ease: "power2.in" },
 				"<"
@@ -176,10 +176,11 @@ const Products: React.FC = () => {
 		gsap.timeline({
 			scrollTrigger: {
 				trigger: "#products",
-				start: "top 80%",
+				start: "top bottom",
 				end: "bottom top",
 				onEnter: () => tl.restart(),
 				onEnterBack: () => tl.restart(),
+				onLeave: () => tl.reverse(),
 			},
 		});
 	});
@@ -201,7 +202,7 @@ const Products: React.FC = () => {
 						</h2>
 
 						{/* Cards row */}
-						<div className='relative card-row'>
+						<div className='relative product-card-row'>
 							<Swiper
 								modules={[Navigation, FreeMode]}
 								freeMode={true}
@@ -291,14 +292,14 @@ const Products: React.FC = () => {
 							{products[0].palettes.map((palette) => (
 								<div
 									key={palette.id}
-									className={`w-9 h-9 rounded-full flex justify-center items-center border-2 transition-all duration-700 ease-in-out ${
+									className={`w-7 h-7 rounded-full flex justify-center items-center border-2 transition-all duration-700 ease-in-out ${
 										activePalette.id === palette.id
 											? "border-white"
 											: "border-transparent"
 									}`}>
 									<button
 										onClick={() => handlePaletteChange(palette)}
-										className='w-7 h-7 rounded-full cursor-pointer border border-white/10'
+										className='w-5 h-5 rounded-full cursor-pointer border border-white/10'
 										style={{ backgroundColor: palette.swatch }}
 									/>
 								</div>

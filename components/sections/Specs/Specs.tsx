@@ -175,7 +175,7 @@ const Specs = () => {
 		gsap.timeline({
 			scrollTrigger: {
 				trigger: "#specs",
-				start: "top 80%",
+				start: "top 98%",
 				end: "bottom top",
 				onEnter: () => {
 					tl.restart();

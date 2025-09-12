@@ -204,7 +204,11 @@ const Navbar = ({
 					<button
 						id='menu-btn'
 						onClick={toggleMenu}
-						className='relative z-[60] w-6 h-6 flex items-center justify-center cursor-pointer lg:hidden'>
+						className='relative z-[60] w-6 h-6 flex items-center justify-center cursor-pointer lg:hidden'
+						style={{
+							filter:
+								"drop-shadow(0 0 12px #00ffc6) drop-shadow(0 0 20px #7a5cff)",
+						}}>
 						<div className='relative w-6 flex flex-col items-center justify-center'>
 							<span
 								className={`absolute h-[1px] w-full bg-accent rounded transition-transform duration-500 ${
