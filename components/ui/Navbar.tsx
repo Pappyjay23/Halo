@@ -9,6 +9,13 @@ import { IoVolumeMute } from "react-icons/io5";
 import { MdOutlineShoppingCart } from "react-icons/md";
 import { Link } from "react-scroll";
 
+export const navLinks = [
+	{ name: "Specs", path: "specs" },
+	{ name: "Highlights", path: "highlights" },
+	{ name: "Products", path: "products" },
+	{ name: "Testimonials", path: "testimonials" },
+];
+
 const Navbar = ({
 	isPlaying,
 	setIsPlaying,
@@ -16,13 +23,6 @@ const Navbar = ({
 	isPlaying: boolean;
 	setIsPlaying: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
-	const navLinks = [
-		{ name: "Specs", path: "specs" },
-		{ name: "Highlights", path: "highlights" },
-		{ name: "Products", path: "products" },
-		{ name: "Testimonials", path: "testimonials" },
-	];
-
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
 
 	const { play: playAmbient, stop: stopAmbient } = useSound(
@@ -191,11 +191,11 @@ const Navbar = ({
 								duration={500}
 								offset={-50}
 								spy={true}
-								className='opacity-100 cursor-pointer'>
+								className='opacity-100 cursor-pointer hover:text-accent transition-all duration-500 ease-in-out'>
 								{link.name}
 							</Link>
 						))}
-						<button className='opacity-100 cursor-pointer'>
+						<button className='opacity-100 cursor-pointer hover:text-accent transition-all duration-500 ease-in-out'>
 							<MdOutlineShoppingCart className='text-[1.2rem]' />
 						</button>
 					</div>

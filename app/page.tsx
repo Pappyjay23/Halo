@@ -1,6 +1,7 @@
 "use client";
 
 import CTA from "@/components/sections/CTA/CTA";
+import Footer from "@/components/sections/Footer/Footer";
 import Hero from "@/components/sections/Hero/Hero";
 import Highlights from "@/components/sections/Highlights/Highlights";
 import Products from "@/components/sections/Products/Products";
@@ -49,6 +50,7 @@ const Home = () => {
 								<Products />
 								<Testimonials />
 								<CTA />
+								<Footer />
 							</div>
 						)}
 					</main>
