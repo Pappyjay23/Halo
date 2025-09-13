@@ -1,4 +1,5 @@
 import { navLinks } from "@/components/ui/Navbar";
+import { useSound } from "@/hooks/useSound";
 import { showToast } from "@/utils/toast";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
@@ -10,6 +11,8 @@ import { IoLogoInstagram, IoLogoYoutube } from "react-icons/io5";
 import { Link } from "react-scroll";
 
 const Footer = () => {
+	const { play: playClick } = useSound("/sounds/click.wav", 0.6, false);
+
 	useGSAP(() => {
 		const tl = gsap.timeline({ paused: true });
 		tl.fromTo(
@@ -65,6 +68,7 @@ const Footer = () => {
 					{/* Nav */}
 					<div className='flex flex-col md:flex-row gap-4 justify-between items-center lg:w-[70%] w-[80%] footer-nav'>
 						<Link
+							onClick={() => playClick()}
 							id='logo'
 							to='hero'
 							smooth={true}
@@ -89,6 +93,7 @@ const Footer = () => {
 							className='gap-4 items-center flex flex-row text-xs font-medium text-white'>
 							{navLinks.map((link, index) => (
 								<Link
+									onClick={() => playClick()}
 									key={index}
 									to={link.path}
 									smooth={true}
@@ -102,27 +107,39 @@ const Footer = () => {
 						</div>
 						<div className='flex flex-row items-center gap-3 drop-shadow-2xl text-sm'>
 							<FaXTwitter
-								onClick={() =>
-									showToast("🚧 Our social links aren’t live yet — stay tuned!")
-								}
+								onClick={() => {
+									playClick();
+									showToast(
+										"🚧 Our social links aren’t live yet — stay tuned!"
+									);
+								}}
 								className='hover:text-accent transition-all duration-300 ease-in-out cursor-pointer'
 							/>
 							<IoLogoInstagram
-								onClick={() =>
-									showToast("🚧 Our social links aren’t live yet — stay tuned!")
-								}
+								onClick={() => {
+									playClick();
+									showToast(
+										"🚧 Our social links aren’t live yet — stay tuned!"
+									);
+								}}
 								className='hover:text-accent transition-all duration-300 ease-in-out cursor-pointer'
 							/>
 							<FaFacebookF
-								onClick={() =>
-									showToast("🚧 Our social links aren’t live yet — stay tuned!")
-								}
+								onClick={() => {
+									playClick();
+									showToast(
+										"🚧 Our social links aren’t live yet — stay tuned!"
+									);
+								}}
 								className='hover:text-accent transition-all duration-300 ease-in-out cursor-pointer'
 							/>
 							<IoLogoYoutube
-								onClick={() =>
-									showToast("🚧 Our social links aren’t live yet — stay tuned!")
-								}
+								onClick={() => {
+									playClick();
+									showToast(
+										"🚧 Our social links aren’t live yet — stay tuned!"
+									);
+								}}
 								className='hover:text-accent transition-all duration-300 ease-in-out cursor-pointer'
 							/>
 						</div>

@@ -1,6 +1,7 @@
 "use client";
 
 import { useSound } from "@/hooks/useSound";
+import { showToast } from "@/utils/toast";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import Image from "next/image";
@@ -24,6 +25,8 @@ const Navbar = ({
 	setIsPlaying: React.Dispatch<React.SetStateAction<boolean>>;
 }) => {
 	const [isMenuOpen, setIsMenuOpen] = useState(false);
+
+	const { play: playClick } = useSound("/sounds/click.wav", 0.6, false);
 
 	const { play: playAmbient, stop: stopAmbient } = useSound(
 		"/sounds/ambient.mp3",
@@ -143,7 +146,10 @@ const Navbar = ({
 				{/* Volume Button */}
 				<button
 					id='volume-btn'
-					onClick={toggleAudio}
+					onClick={() => {
+						playClick();
+						toggleAudio();
+					}}
 					className='relative bg-accent/5 p-2 rounded-full h-7 w-7 md:w-10 md:h-10 flex items-center justify-center hover:bg-accent/20 transition-all duration-500 ease-in-out cursor-pointer border border-accent opacity-0'>
 					<span className='volume-btn'>
 						{!isPlaying ? (
@@ -165,6 +171,7 @@ const Navbar = ({
 
 				{/* Logo */}
 				<Link
+					onClick={playClick}
 					id='logo'
 					to='hero'
 					smooth={true}
@@ -185,6 +192,7 @@ const Navbar = ({
 					<div id='nav-links' className='space-x-4 items-center hidden lg:flex'>
 						{navLinks.map((link, index) => (
 							<Link
+								onClick={playClick}
 								key={index}
 								to={link.path}
 								smooth={true}
@@ -195,7 +203,14 @@ const Navbar = ({
 								{link.name}
 							</Link>
 						))}
-						<button className='opacity-100 cursor-pointer hover:text-accent transition-all duration-500 ease-in-out'>
+						<button
+							onClick={() => {
+								playClick();
+								showToast(
+									"🚧 Halo isn’t available for purchase yet. Stay tuned for updates!"
+								);
+							}}
+							className='opacity-100 cursor-pointer hover:text-accent transition-all duration-500 ease-in-out'>
 							<MdOutlineShoppingCart className='text-[1.2rem]' />
 						</button>
 					</div>
@@ -203,7 +218,10 @@ const Navbar = ({
 					{/* Mobile Menu Toggle */}
 					<button
 						id='menu-btn'
-						onClick={toggleMenu}
+						onClick={() => {
+							playClick();
+							toggleMenu();
+						}}
 						className='relative z-[60] w-6 h-6 flex items-center justify-center cursor-pointer lg:hidden'
 						style={{
 							filter:
@@ -238,7 +256,10 @@ const Navbar = ({
 				<div className='relative gap-6 flex flex-col items-center text-white z-50 mt-[6rem] text-[2.5rem] font-dm-sans font-semibold mobile-menu-links'>
 					{navLinks.map((link, index) => (
 						<Link
-							onClick={toggleMenu}
+							onClick={() => {
+								playClick();
+								toggleMenu();
+							}}
 							key={index}
 							to={link.path}
 							smooth={true}
@@ -249,11 +270,11 @@ const Navbar = ({
 							{link.name}
 						</Link>
 					))}
-					<button
+					{/* <button
 						onClick={toggleMenu}
 						className='cursor-pointer drop-shadow-2xl'>
 						<p>Shopping Cart</p>
-					</button>
+					</button> */}
 				</div>
 			</div>
 		</nav>

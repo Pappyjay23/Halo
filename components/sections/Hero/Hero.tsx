@@ -146,27 +146,39 @@ const Hero = ({
 						<div className='h-[0.7px] w-8 bg-white' />
 						<div className='flex flex-col items-center gap-3 -rotate-90 ml-[3rem] drop-shadow-2xl'>
 							<FaXTwitter
-								onClick={() =>
-									showToast("🚧 Our social links aren’t live yet — stay tuned!")
-								}
+								onClick={() => {
+									playClick();
+									showToast(
+										"🚧 Our social links aren’t live yet — stay tuned!"
+									);
+								}}
 								className='hover:text-accent transition-all duration-300 ease-in-out cursor-pointer'
 							/>
 							<IoLogoInstagram
-								onClick={() =>
-									showToast("🚧 Our social links aren’t live yet — stay tuned!")
-								}
+								onClick={() => {
+									playClick();
+									showToast(
+										"🚧 Our social links aren’t live yet — stay tuned!"
+									);
+								}}
 								className='hover:text-accent transition-all duration-300 ease-in-out cursor-pointer'
 							/>
 							<FaFacebookF
-								onClick={() =>
-									showToast("🚧 Our social links aren’t live yet — stay tuned!")
-								}
+								onClick={() => {
+									playClick();
+									showToast(
+										"🚧 Our social links aren’t live yet — stay tuned!"
+									);
+								}}
 								className='hover:text-accent transition-all duration-300 ease-in-out cursor-pointer'
 							/>
 							<IoLogoYoutube
-								onClick={() =>
-									showToast("🚧 Our social links aren’t live yet — stay tuned!")
-								}
+								onClick={() => {
+									playClick();
+									showToast(
+										"🚧 Our social links aren’t live yet — stay tuned!"
+									);
+								}}
 								className='hover:text-accent transition-all duration-300 ease-in-out cursor-pointer'
 							/>
 						</div>
@@ -202,7 +214,7 @@ const Hero = ({
 							className='relative group overflow-hidden text-sm bg-white/5 backdrop-blur-md border border-white/30 px-8 py-4 rounded-[4rem] transition-all duration-500 shadow-[inset_3px_3px_10px_rgba(255,255,255,0.5)] active:scale-[0.90]'>
 							<div className='relative z-[3] flex items-center gap-2'>
 								<span className=' font-bold font-plus-jakarta-sans'>
-									Shop now
+									Explore Features
 								</span>
 								<MdArrowOutward />
 							</div>

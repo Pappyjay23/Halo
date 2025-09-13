@@ -1,4 +1,5 @@
 import { useSound } from "@/hooks/useSound";
+import { showToast } from "@/utils/toast";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import React from "react";
@@ -57,10 +58,10 @@ const CTA = () => {
 					</h1>
 				</div>
 				<div className='flex flex-wrap justify-center gap-2 items-center mt-4 overflow-hidden'>
-					<Link
-						to='products'
+					<button
 						onClick={() => {
 							playClick();
+							showToast("🚧 Halo isn’t available for purchase yet. Stay tuned for updates!")
 						}}
 						className='relative group overflow-hidden text-sm bg-white text-black hover:bg-accent/50 hover:text-white backdrop-blur-md border border-white/30 px-6 md:px-8 py-4 rounded-[4rem] transition-all duration-500 shadow-[inset_3px_3px_10px_rgba(255,255,255,0.5)] active:scale-[0.90] cursor-pointer cta-btn'>
 						<div className='relative z-[3] flex items-center gap-2'>
@@ -69,7 +70,7 @@ const CTA = () => {
 							</span>
 							<MdArrowOutward />
 						</div>
-					</Link>
+					</button>
 					<Link
 						to='products'
 						onClick={() => {
