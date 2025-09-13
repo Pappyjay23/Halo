@@ -60,11 +60,10 @@ const Navbar = ({
 					y: 0,
 					duration: 1,
 					ease: "power4.out",
-					delay: 0.5,
 				}
 			)
 			.fromTo(
-				"#logo, #nav-links a, #nav-links button, #menu-btn",
+				"#logo",
 				{
 					opacity: 0,
 					y: 100,
@@ -72,9 +71,22 @@ const Navbar = ({
 				{
 					opacity: 1,
 					y: 0,
-					duration: 2,
+					duration: 1.2,
 					ease: "power4.out",
-					delay: 0.5,
+				},
+				"<"
+			)
+			.fromTo(
+				"#nav-links a, #nav-links button, #menu-btn",
+				{
+					opacity: 0,
+					y: 100,
+				},
+				{
+					opacity: 1,
+					y: 0,
+					duration: 1.5,
+					ease: "power4.out",
 					stagger: 0.075,
 				},
 				"<"
@@ -199,7 +211,7 @@ const Navbar = ({
 								duration={500}
 								offset={-50}
 								spy={true}
-								className='opacity-100 cursor-pointer hover:text-accent transition-all duration-500 ease-in-out'>
+								className='opacity-0 cursor-pointer hover:text-accent transition-all duration-500 ease-in-out'>
 								{link.name}
 							</Link>
 						))}
@@ -210,7 +222,7 @@ const Navbar = ({
 									"🚧 Halo isn’t available for purchase yet. Stay tuned for updates!"
 								);
 							}}
-							className='opacity-100 cursor-pointer hover:text-accent transition-all duration-500 ease-in-out'>
+							className='opacity-0 cursor-pointer hover:text-accent transition-all duration-500 ease-in-out'>
 							<MdOutlineShoppingCart className='text-[1.2rem]' />
 						</button>
 					</div>
