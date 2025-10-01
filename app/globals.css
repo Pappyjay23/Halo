@@ -38,11 +38,16 @@
 	--font-dm-sans: var(--font-dm-sans);
 }
 
+* {
+	box-sizing: border-box;
+}
+
 body {
 	background: var(--background);
 	color: var(--foreground);
 	font-family: var(--font-manrope);
 	scroll-behavior: smooth;
+	overflow-x: hidden;
 }
 
 html,
