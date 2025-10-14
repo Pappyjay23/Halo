@@ -2,6 +2,13 @@
 	<h1> Halo 🎧</h1>
 </div>
 
+## 🌟 Overview
+
+**Halo** is an immersive digital experience conceived as a showcase for a premium, fictional headphone brand. The project's genesis was to approach a side project with **real-world client planning and meticulous UX design**, where every detail—from the brand identity and typography to the scrolling narrative—was carefully structured before a single line of code was written.
+
+This application integrates several modern web frameworks into one cohesive, high-performance product. The core technical idea was to blend the structural reliability of **Next.js** with the visual power of **Three.js** (for complex 3D rendering) and the buttery-smooth animation control of **GSAP**. The goal was to prove that ambitious, next-generation immersive designs are viable while maintaining a high frame rate and excellent performance metrics.
+
+
 ## Snapshot 📸
 <img width="1917" height="927" alt="Screenshot 2025-09-13 224440" src="https://github.com/user-attachments/assets/bf1cb3dc-b392-4b7e-bf66-b956ae096171" />
 
